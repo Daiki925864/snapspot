@@ -7,7 +7,6 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -15,7 +14,7 @@
       <div class="inner">
         <div class="nav">
           <div class="nav__left">
-            <%= link_to image_tag("logo.png", class: :logo), root_path %>
+            <%= link_to image_tag("logo.png", class: :logo__header), root_path %>
           </div>
           <%# ログインしているときは以下を表示するようにしましょう %>
             <%# <div class="nav__right"> %>
@@ -34,7 +33,9 @@
     </header>
     <%= yield %>
     <footer class="footer">
-      <p class="copyright">Copyright © SnapSpot All rights reserved.</p>
+      <%= link_to image_tag("logo.png", class: :logo__footer), root_path %>
+      <div class="copyright">Copyright © SnapSpot All rights reserved.</div>
+      <div class="copyright">投稿されたコンテンツは、ユーザー個々の視点、主観に基づいたものであり、その内容を保証するものではありません。</div>
     </footer>
   </body>
 </html>
